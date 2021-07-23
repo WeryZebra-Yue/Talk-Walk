@@ -1,5 +1,5 @@
 import {useCollection} from "react-firebase-hooks/firestore"
-import { db } from "../firebase";
+import { db } from "../firebasee";
 import Post from "./Post";
 import Link from 'next/link'
 

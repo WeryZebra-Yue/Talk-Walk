@@ -1,11 +1,11 @@
 import {useCollection} from "react-firebase-hooks/firestore"
-import { db } from "../firebase";
+import { db } from "../firebasee";
 import Post from "./Post";
 
 
 function Prpost({user,flag}) {
-    if(!flag){
     const [realtimePosts] = useCollection(db.collection('post').where("email","==",`${user}`))
+    if(!flag){
 
 
 

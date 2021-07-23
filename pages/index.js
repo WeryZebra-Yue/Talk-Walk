@@ -6,14 +6,14 @@ import Header from '../components/Header'
 import HeaderIcon from '../components/HeaderIcon'
 import Login from '../components/Login'
 import Sidebar from '../components/Sidebar'
-import { db ,rdb } from '../firebase'
+import { db ,rdb } from '../firebasee'
 
 export default function Home({session}) {
 
 
   if(!session) return <Login/>;
-  else{
-    const [sessions] = useSession();
+  
+   const [sessions] = useSession();
    rdb.ref("users").child(`${sessions.user.email.split("@")[0]}`).set({
    
       name : sessions.user.name,
@@ -38,7 +38,7 @@ export default function Home({session}) {
     </div>
   )
   }
-}
+
  export async function getServerSideProps(context){
    const session = await getSession(context);
   //  const posts = await db.collection("posts").orderBy("timestap","desc").get();

@@ -2,13 +2,13 @@
 // import { route } from "next/dist/next-server/server/router";
 import {useRouter} from "next/router"
 import { useEffect, useState } from "react";
-import { db  , rdb} from "../firebase";
+import { db  , rdb} from "../firebasee";
 import Image from "next/image"
 import {getSession,useSession} from "next-auth/client"
 import Login from "../components/Login"
 import Prpost from "../components/Prpost"
 import HeaderProfile from "../components/HeaderProfile";
-function go({sessions}) {
+function Go({sessions}) {
      
          if(!sessions) return <Login/>
          const [route,setroute] = useState(null)
@@ -89,4 +89,4 @@ export async function getServerSideProps(context){
         }
       }
 }
-export default go
+export default Go

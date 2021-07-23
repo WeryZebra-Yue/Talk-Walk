@@ -4,7 +4,7 @@ import{
 } from "@heroicons/react/solid"
 import { useSession } from "next-auth/client";
 import { useState } from "react";
-import {rdb} from '../firebase'
+import {rdb} from '../firebasee'
 
 function Like({id}) {
     const [session] = useSession();

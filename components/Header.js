@@ -16,7 +16,7 @@ import {
 from '@heroicons/react/outline'
 import HeaderIcon from './HeaderIcon'
 import { signOut , useSession } from 'next-auth/client'
-import { rdb } from '../firebase'
+import { rdb } from '../firebasee'
 import { useState } from 'react'
 import Name from './Name'
 import Link from 'next/link'

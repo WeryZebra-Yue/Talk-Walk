@@ -4,7 +4,7 @@ import{
 } from "@heroicons/react/solid"
 import Link from "next/link"
 import { useState } from "react"
-import {db,rdb} from '../firebase'
+import {db,rdb} from '../firebasee'
 import {useSession} from 'next-auth/client'
 import Like from "./Like"
 // import {useRouter} from "next/router"
@@ -22,7 +22,7 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
           <a href={`/${email.split('@')[0]}`}>
               <div className="flex items-center space-x-2 cursor-pointer">
 
-                  <img src={image} className="rounded-full" width={40} height ={40} alt = ""/>
+                  <Image src={image} className="rounded-full" width={40} height ={40} alt = ""/>
                   <div>
                     
                       <p className="font-medium">{name}</p>
@@ -40,14 +40,14 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
           </div>
           {postImage&&
           (
-              <div className="flex bg-white  justify-center">
+              <div className="relative h-96 bg-white  justify-center">
                 {
                   !Type && 
-                  <img
+                  <Image
                     src={postImage}
                     className="object-contain "
-                    loading="lazy"
-                    placeholder="blurURLData"
+                    objectFit = "contain"
+                    layout="fill"
                     />
                 }
                 {

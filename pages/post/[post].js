@@ -2,16 +2,16 @@ import {useRouter} from "next/router"
 import { useEffect, useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import PostPage from "../../components/PostPage";
-import { db } from "../../firebase";
+import { db } from "../../firebasee";
 
-function post() {
+function Post() {
     const router = useRouter();
     const [route,setroute] = useState(null)
     const [realtimePosts] = useCollection(db.collection('post').where("id","==",route))
 
     useEffect(() => {
         if (router.asPath !== router.route) {
-            setroute(router.query.post)
+            setroute(router.query.Post)
             
         }
     }
@@ -57,4 +57,4 @@ function post() {
     }
 }
 
-export default post
+export default Post
