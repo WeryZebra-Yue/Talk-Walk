@@ -9,32 +9,33 @@ import Login from "../components/Login"
 import Prpost from "../components/Prpost"
 import HeaderProfile from "../components/HeaderProfile";
 function Go({sessions}) {
+  const [route,setroute] = useState(null)
+  const [username,setname] = useState(null);
+  const [userimage,setimage] = useState(null);
+  const [flag,setflag] = useState(false);
+  const router = useRouter();
+  
+  
+  useEffect(() => {
+      if (router.asPath !== router.route) {
+           setroute(router.query.go)
+          rdb.ref("users").child(router.query.go).once("value",snapshot=>{
+              if(snapshot.val()){
+                setname(snapshot.val().name)
+                setimage(snapshot.val().image)
+               }
+               else{
+                 setflag(true)
+               }
+          }
+         
+          )
+         
+      }
+    }, [router])
      
-         if(!sessions) return <Login/>
-         const [route,setroute] = useState(null)
-         const [username,setname] = useState(null);
-         const [userimage,setimage] = useState(null);
-         const [flag,setflag] = useState(false);
-         const router = useRouter();
-    
-        
-         useEffect(() => {
-             if (router.asPath !== router.route) {
-                  setroute(router.query.go)
-                 rdb.ref("users").child(router.query.go).once("value",snapshot=>{
-                     if(snapshot.val()){
-                       setname(snapshot.val().name)
-                       setimage(snapshot.val().image)
-                      }
-                      else{
-                        setflag(true)
-                      }
-                 }
-                
-                 )
-                
-             }
-           }, [router])
+      if(!sessions) return <Login/>
+         
 
           
      if(!flag){ 

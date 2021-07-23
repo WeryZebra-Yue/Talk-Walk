@@ -10,10 +10,10 @@ import { db ,rdb } from '../firebasee'
 
 export default function Home({session}) {
 
+  const [sessions] = useSession();
 
   if(!session) return <Login/>;
   
-   const [sessions] = useSession();
    rdb.ref("users").child(`${sessions.user.email.split("@")[0]}`).set({
    
       name : sessions.user.name,
