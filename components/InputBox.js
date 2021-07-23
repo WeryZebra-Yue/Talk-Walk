@@ -102,7 +102,7 @@ function InputBox() {
                 </form>
                 {imagetopost && (
                     <div className="flex flex-col hover:brightness-110 transition duration-150 hover:scale-105 cursor-pointer min-h-20 min-w-20">
-                        <Image className="object-contain rounded-lg h-16"  src={imagetopost} alt=""/>
+                        <Image className="object-contain rounded-lg h-16" height={45} width={90}  src={imagetopost} alt=""/>
                         <p  onClick = {removeImage} className="text-xs text-red-500 text-center">Remove</p>
                     </div>
                 )}
