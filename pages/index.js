@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Feed from '../components/Feed'
 import Header from '../components/Header'
 import HeaderIcon from '../components/HeaderIcon'
-import Login from '../components/Login'
+import Login from './Login'
 import Sidebar from '../components/Sidebar'
 import { db ,rdb } from '../firebasee'
 
