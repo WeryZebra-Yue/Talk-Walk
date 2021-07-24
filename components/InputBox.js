@@ -25,7 +25,11 @@ function InputBox() {
                    }
                    return result;
                 }
-         
+                if(type=="video/mp4"){
+                    if(document.getElementById("postimagereview")){
+                        document.getElementById("postimagereview").src = "https://cdn.dribbble.com/users/45617/screenshots/5021228/frame_3_4x.png";
+                    }
+                }
             if(!inputref.current.value)return;
              
             db.collection('post').add({
@@ -68,11 +72,12 @@ function InputBox() {
                 console.log(1)
                 reader.readAsDataURL(e.target.files[0]);
             }
+          
             reader.onload = (readerEvent)=>{
                 if(types == "video/mp4"){
-                setImage("https://drive.google.com/file/d/1CEpflg9UWgFybzCQ3iijcayYflmZBNMg/view?usp=sharing")  
+                setImage(readerEvent.target.result);  
                     
-                }
+                } 
                 else{
                     setImage(readerEvent.target.result);
                 }
@@ -92,7 +97,7 @@ function InputBox() {
         text-gray-600 font-medium mt-6 m-3">
             {/* tophalf */}
             <div className="flex space-x-4 p-4 items-center">
-                            <Image src={session.user.image} className="rounded-full w-10 sm:w-12" width={40} height ={40} alt = ""/>
+                            <Image src={session.user.image}  className="rounded-full w-10 sm:w-12" width={40} height ={40} alt = ""/>
 
                 <form className="flex flex-1">
                 <input 
@@ -102,7 +107,7 @@ function InputBox() {
                 </form>
                 {imagetopost && (
                     <div className="flex flex-col hover:brightness-110 transition duration-150 hover:scale-105 cursor-pointer min-h-20 min-w-20">
-                        <Image className="object-contain rounded-lg h-16" height={45} width={90}  src={imagetopost} alt=""/>
+                        <Image className="object-contain rounded-lg h-16" id="postimagereview" height={45} width={90}  src={imagetopost} alt="" />
                         <p  onClick = {removeImage} className="text-xs text-red-500 text-center">Remove</p>
                     </div>
                 )}

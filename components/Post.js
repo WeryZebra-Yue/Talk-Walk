@@ -78,8 +78,8 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
                   <video
                     src={postImage}
                     controls
-                    className="object-contain"
-                    
+                    className="object-contain h-full self-center w-full"
+                    objectFit="contain"
                     loading="lazy"
                     placeholder="blurURLData"
                     />
