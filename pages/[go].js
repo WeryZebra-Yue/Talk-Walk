@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { db  , rdb} from "../firebasee";
 import Image from "next/image"
 import {getSession,useSession} from "next-auth/client"
-import Login from "../components/Login"
+import Login from "./Login"
 import Prpost from "../components/Prpost"
 import HeaderProfile from "../components/HeaderProfile";
 function Go({sessions}) {
