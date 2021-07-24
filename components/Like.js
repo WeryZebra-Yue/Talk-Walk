@@ -30,35 +30,30 @@ function Like({id}) {
                 document.getElementById(`Number${id}`).innerHTML = rig;
             }
               
-            if(document.getElementById(`like${id}`) ){
-                let flags = true
+            if(likes && document.getElementById(`like${id}`) ){
                 for (const [key, value] of Object.entries(snap.val())){
                 
                     if(value.email == session.user.email ){
                         // console.log(id)
                         document.getElementById(`like${id}`).classList.add("likees")
-                        flags = false
+                        setLikes(false);
                         break;
-                    }
-                     
+                     }
+                     setLikes(false);
                   
                      
                   
                 }
-                if(flags){
-                    // flags = true
-                }
-                
-                
+ 
             }
         }
         
         
-    }  else if(  document.getElementById(`Number${id}`)){
+     }  else if(  document.getElementById(`Number${id}`)){
         pre = null
         document.getElementById(`Number${id}`).innerHTML = "";
         document.getElementById(`like${id}`).classList.remove("likees")
-        
+      
     }
         
        
