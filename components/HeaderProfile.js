@@ -11,10 +11,11 @@ function HeaderProfile({userName,userImage}) {
                
                <Image
                 src={userImage}
-                width={80}
-                height={80}
-                className="rounded-full h-12 border-2 border-blue-500 shadow-md md:h-18 "
-                layout="fixed"/>
+                width={60}
+                height={60}
+                className="rounded-full  border-2 border-blue-500 md:h-18 "
+                layout="fixed"
+                 />
                
                }
                 <p className=" ml-5 text-lg  md:text-xl">{userName}</p>
