@@ -116,7 +116,7 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
                 </a>
                 </div>
                 {!session && 
-          <p><Link  href="/"> <p  className="text-blue-600 font-medium">Sign in</p> </Link> to Like and See More Post!</p>}
+          <p><Link  href="/">Sign in</Link> to Like and See More Post!</p>}
 
 
           </div>
