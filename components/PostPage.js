@@ -9,6 +9,7 @@ import {useSession} from 'next-auth/client'
 import Like from "./Like"
 import PageLike from "./PageLike"
 import Head from 'next/head'
+import Link from "next/link"
 // import {useRouter} from "next/router"
 
 function Post({id,name,message,email,postImage,image,timestamp,Type}) {
@@ -120,7 +121,7 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
                 </a>
                 </div>
                 {!session && 
-          <p><a className="text-blue-600 font-medium" href="/"> Sign in </a> to Like and See More Post!</p>}
+          <p><Link className="text-blue-600 font-medium" href="/"> Sign in </Link> to Like and See More Post!</p>}
 
 
           </div>
