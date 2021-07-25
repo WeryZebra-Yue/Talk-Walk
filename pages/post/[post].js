@@ -46,8 +46,8 @@ function Post() {
                 }
                 
                 <Head>
-                <meta property="og:image" content="https://example.com/ogp.jpg" />
-                <meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" />
+                <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Shen_Yue_in_January_2021.png/330px-Shen_Yue_in_January_2021.png" />
+                
                 <meta property="og:image:type" content="image/jpeg" />
                 <meta property="og:image:width" content="400" />
                 <meta property="og:image:height" content="300" />
