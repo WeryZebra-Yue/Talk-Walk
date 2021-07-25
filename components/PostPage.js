@@ -41,7 +41,13 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
     return (
      
         <div className="flex flex-col w-full unselectable ">
-       
+       <Head>
+       <meta property="og:title" content="How to change the address bar color in Chrome, Firefox, Opera, Safari" />
+<meta property="og:description" content="How to change the address bar color in Chrome, Firefox, Opera, Safari" />
+<meta property="og:url" content={`https://is-clone3.vercel.app/post/${id}`} />
+<meta property="og:image" content={postImage} />
+
+       </Head>
           <div className="p-5 bg-white mt-5 rounded-t-2xl shadow-md"> 
           <a href={`/${email.split('@')[0]}`}>
               <div className="flex items-center space-x-2 cursor-pointer">
