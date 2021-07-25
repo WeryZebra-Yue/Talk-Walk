@@ -45,7 +45,10 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
        <meta property="og:title" content="How to change the address bar color in Chrome, Firefox, Opera, Safari" />
 <meta property="og:description" content="How to change the address bar color in Chrome, Firefox, Opera, Safari" />
 <meta property="og:url" content={`https://is-clone3.vercel.app/post/${id}`} />
-<meta property="og:image" content={postImage} />
+<meta property="og:image" content={postImage}/>
+<meta property="og_image" content={postImage}/>
+<meta name="msapplication-TileImage" content={postImage}  />
+<meta name="og_site_name" property="og:site_name" content={`https://is-clone3.vercel.app/post/${id}`} />
 
        </Head>
           <div className="p-5 bg-white mt-5 rounded-t-2xl shadow-md"> 
