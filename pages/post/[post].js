@@ -29,7 +29,7 @@ function Post() {
                 {
              realtimePosts?.docs.map((post,index)=>{
                   
-                 return <PostPage
+                 return( <PostPage
                    key = {index}
                    name = {post.data().name}
                    message = {post.data().message}
@@ -40,8 +40,20 @@ function Post() {
                    Type = {post.data().Type}
                    id = {post.data().id}
                   />
+                  )
                   })
+                  
                 }
+                
+                <Head>
+                <meta property="og:image" content="https://example.com/ogp.jpg" />
+                <meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" />
+                <meta property="og:image:type" content="image/jpeg" />
+                <meta property="og:image:width" content="400" />
+                <meta property="og:image:height" content="300" />
+                <meta property="og:image:alt" content="A shiny red apple with a bite taken out" />
+                </Head>
+
                 {/* Hello */}
             </div>
              </div>

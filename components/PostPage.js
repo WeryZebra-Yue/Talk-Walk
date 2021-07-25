@@ -41,12 +41,7 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
     return (
      
         <div className="flex flex-col w-full unselectable ">
-           <Head>
-                <meta property="og:image" content={`${postImage}`}/>
-                <meta property="og:image:type" content="image/jpeg"/>
-                <meta property="og:image:width" content="200"/>
-                <meta property="og:image:height" content="200"/>
-            </Head>
+       
           <div className="p-5 bg-white mt-5 rounded-t-2xl shadow-md"> 
           <a href={`/${email.split('@')[0]}`}>
               <div className="flex items-center space-x-2 cursor-pointer">
