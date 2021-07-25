@@ -6,7 +6,9 @@ module.exports = {
       "firebasestorage.googleapis.com",
       "lh3.googleusercontent.com",
       "drive.google.com",
-      "cdn.dribbble.com"
+      "cdn.dribbble.com",
+      "lh6.googleusercontent.com",
+      "lh4.googleusercontent.com"
     ]
   }
 }

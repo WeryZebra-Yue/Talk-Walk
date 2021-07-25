@@ -70,13 +70,31 @@ function Header() {
             <div className="sticky  top-0 z-50">
         <div className="flex items-center sticky top-0 bg-white p-2 lg:-px-5 shadow-md z-50">
            {/*Left part*/}
-           <div>
-               <Image src="https://links.papareact.com/5me" width ={40} height={40} layout = "fixed"/>
-           </div>
+           
+           <svg className="h-12 md:h-16 mt-1" preserveAspectRatio="xMidYMid meet" viewBox="695 273 158 159"><g data-item-type="text" data-item="Business" id="logo__item--business" >
+    <g  transform="translate(698.515625 429.67821982214735) scale(1 1) rotate(0 0 0)">
+    </g>
+</g><g data-item-type="text" id="logo__item--tagline_1" data-item="Tagline" >
+<g  transform="translate(772.4296875 429.67821982214735) scale(1.5408859720062595 1.5408859720062595) rotate(0 0 0)">
+</g>
+</g><g data-item-type="image" data-item="Image" data-logo-item="" id="logo__item--logo_0" >
+<g  transform="translate(706.4577804427239 267) scale(1.3749956617889585 1.3749956617889585) rotate(0 0 0)">
+
+
+<g>
+<path fill="#2B388F" d="M35.825,22.255c0,0-61.65,53.146,16.298,48.185V55.558C52.123,55.558,0.397,65.479,35.825,22.255z" data-part-id="logo__item--logo_0__0"></path>
+<path fill="#26A9E0" d="M59.509,79.402c0,0,61.651-53.146-16.298-48.186v14.882C43.21,46.099,94.94,36.178,59.509,79.402z" data-part-id="logo__item--logo_0__1"></path>
+<path fill="#26A9E0" d="M68.029,14.907c0,4.433-3.592,8.017-8.02,8.017c-4.425,0-8.017-3.584-8.017-8.017   c0-4.428,3.592-8.016,8.017-8.016C64.438,6.892,68.029,10.479,68.029,14.907z" data-part-id="logo__item--logo_0__2"></path>
+<circle fill="#2B388F" cx="35.035" cy="86.144" r="8.02" data-part-id="logo__item--logo_0__3"></circle>
+</g>
+
+</g>
+</g></svg>
+        
             <div className="relative flex-col">
             <div className="flex ml-2 flex-grow items-center rounded-full  bg-gray-100 p-2 ">
                 <SearchIcon className ="h-6 text-gray-600"/>
-                <input className = "flex ml-2 text-xs  items-center bg-transparent outline-none text-gray-600 flex-grow sm:text-base"type="text" placeholder ="Search On FaceBook" onChange={(e)=>data(e.target.value.toLowerCase())} />
+                <input className = "flex ml-2 text-xs  items-center bg-transparent outline-none text-gray-600 flex-grow sm:text-base"type="text" placeholder ="Search On Talk-Walk" onChange={(e)=>data(e.target.value.toLowerCase())} />
                 
             </div>
             
