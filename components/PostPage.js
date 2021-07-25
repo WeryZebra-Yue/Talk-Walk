@@ -3,22 +3,50 @@ import{
     ShareIcon
 } from "@heroicons/react/solid"
 import Link from "next/link"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import {db,rdb} from '../firebasee'
 import {useSession} from 'next-auth/client'
 import Like from "./Like"
+import PageLike from "./PageLike"
+import Head from 'next/head'
 // import {useRouter} from "next/router"
 
 function Post({id,name,message,email,postImage,image,timestamp,Type}) {
   const [session] = useSession();
+  const textAreaRef = useRef(null);
   // console.log(likes)
+  function shares(e){
+   console.log(id)
+   if(document.getElementById(`share${id}`)){
+     
+    document.getElementById(`share${id}`).innerHTML = "Copied"
+    
+      textAreaRef.current.select();
+      document.execCommand('copy');
+      // This is just personal preference.
+      // I prefer to not show the the whole text area selected.
+      e.target.focus();
+      setCopySuccess('Copied!');
+  
+    setTimeout(()=>{
+    document.getElementById(`share${id}`).innerHTML = "Share"
+    
 
+    },600)
+  }
+  }
 
     
     return (
      
-        <div className="flex flex-col w-full unselectable max-h-screen">
-          <div className="p-5 bg-white  rounded-t-2xl shadow-md"> 
+        <div className="flex flex-col w-full unselectable ">
+           <Head>
+                <meta property="og:image" content={`${postImage}`}/>
+                <meta property="og:image:type" content="image/jpeg"/>
+                <meta property="og:image:width" content="200"/>
+                <meta property="og:image:height" content="200"/>
+            </Head>
+          <div className="p-5 bg-white mt-5 rounded-t-2xl shadow-md"> 
           <a href={`/${email.split('@')[0]}`}>
               <div className="flex items-center space-x-2 cursor-pointer">
 
@@ -39,45 +67,64 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
               <p className="pt-4 font-normal">{message}</p>
           </div>
           {postImage&&
-          (
-              <div className="relative h-96 bg-white  justify-center">
-                {
-                  !Type && 
+          
+             !Type && 
+                  <div className="relative  bg-white justify-center h-96">
                   <Image
                     src={postImage}
                     className="object-contain "
-                    objectFit = "contain"
-                    layout="fill"
+                   
+                    placeholder="blurURLData"
+                    //  height = {596}
+                     objectfit = "contain"
+                    //  width = {596}
+                    layout ="fill"
                     />
+              </div>
+          }
+          {postImage&&
+          
+          <div className="relative  bg-white justify-center">
+            {Type && 
+            <video
+              src={postImage}
+              controls
+              className="object-contain self-center max-h-96 w-full"
+              objectfit="cover"
+              loading="lazy"
+              placeholder="blurURLData"
+              />
+            }
+            </div>
+            
+            }
+         
+          <div className="flex flex-col pb-2 justify-between items-center rounded-b-2xl bg-white shadow-md text-gray-400 border-t">
+               {/* ,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
+              <div className="flex w-full">                { session &&
+
+                  <Like id={id} />
                 }
                 {
-                  Type && 
-                  <video
-                    src={postImage}
-                    controls
-                    className="object-contain"
-                    
-                    loading="lazy"
-                    placeholder="blurURLData"
-                    />
+                  !session &&
+                  <PageLike id={id}/>
+
                 }
-                   
-              
-                   
-              </div>
-          )}
-          <div className="flex justify-between items-center rounded-b-2xl bg-white shadow-md text-gray-400 border-t">
-               {/* ,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
-                <Like id={id} />
                {/* ,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
              
-                  <div className="inputIcon rounded-none unselectable rounded-br-2xl">
-                <ShareIcon className="h-4"/>
-                <p className="text-xs sm:text-base">Share</p>
+                <a  className="inputIcon rounded-none unselectable" href={`whatsapp://send?text=localhost:3000/post/${id}`} data-action="share/whatsapp/share" >
                   
-                  </div>
+                <ShareIcon className="h-4"/>
+                <p className="text-xs sm:text-base"  id={`share${id}`}>Share</p>
+               
+                </a>
+                </div>
+                {!session && 
+          <p><a className="text-blue-600 font-medium" href="/"> Sign in </a> to Like and See More Post!</p>}
+
 
           </div>
+         
         </div>
     )
     

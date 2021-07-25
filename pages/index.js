@@ -37,7 +37,7 @@ export default function Home({session}) {
    })
   return (
 
-    <div  className="bg-gray-100">
+    <div  className="bg-gray-200 min-h-screen">
       
       <Head>
         <title>FaceBook</title>

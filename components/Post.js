@@ -58,37 +58,36 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
               <p className="pt-4 font-normal">{message}</p>
           </div>
           {postImage&&
-          (
-              <div className="relative bg-white h-96 justify-center">
-                {
-                  !Type && 
-                  <Image
-                    src={postImage}
-                    className="object-contain "
-                   
-                    placeholder="blurURLData"
-                    //  height = {596}
-                     objectFit = "contain"
-                    //  width = {596}
-                    layout ="fill"
-                    />
-                }
-                {
-                  Type && 
-                  <video
-                    src={postImage}
-                    controls
-                    className="object-contain h-full self-center w-full"
-                    objectFit="contain"
-                    loading="lazy"
-                    placeholder="blurURLData"
-                    />
-                }
-                   
-              
-                   
-              </div>
-          )}
+          
+          !Type && 
+               <div className="relative  bg-white justify-center h-96">
+               <Image
+                 src={postImage}
+                 className="object-contain "
+                
+                 placeholder="blurURLData"
+                 //  height = {596}
+                  objectfit = "contain"
+                 //  width = {596}
+                 layout ="fill"
+                 />
+           </div>
+       }
+       {postImage&&
+       
+       <div className="relative  bg-white justify-center">
+         {Type && 
+         <video
+           src={postImage}
+           controls
+           className="object-contain self-center max-h-96 w-full"
+           objectfit="cover"
+           loading="lazy"
+           placeholder="blurURLData"
+           />
+         }
+         </div>
+         }
           <div className="flex justify-between items-center rounded-b-2xl bg-white shadow-md text-gray-400 border-t">
                {/* ,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
                 <Like id={id} />

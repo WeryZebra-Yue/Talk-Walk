@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import PostPage from "../../components/PostPage";
 import { db } from "../../firebasee";
+import Head from 'next/head'
 
 function Post() {
     const router = useRouter();
     const [route,setroute] = useState(null)
     const [realtimePosts] = useCollection(db.collection('post').where("id","==",route))
-
     useEffect(() => {
         if (router.asPath !== router.route) {
-            setroute(router.query.Post)
-            
+            setroute(router.query.post)
+      
         }
     }
     , [router])
@@ -20,10 +20,12 @@ function Post() {
     {  
         
         return (
-            <div className="h-full min-h-screen w-full bg-gray-200 justify-center  m-0 p-0">
-              <div className="mx-auto  max-w-md md:max-w-lg lg:max-w-2xl">
-                <div className="flex flex-grow">
-                    <div className="flex flex-col w-full self-center justify-self-center items-center justify-center h-screen p-3">
+            <div className=" w-full justify-center m-0 p-0 bg-gray-200 min-h-screen">
+               
+              <div className="mx-auto  max-w-md md:max-w-lg lg:max-w-2xl ">
+                          
+                <div className="flex min-h-screen">
+                    <div className="flex flex-col w-full self-center justify-self-center items-center justify-center  p-3 mb-3  ">
                 {
              realtimePosts?.docs.map((post,index)=>{
                   
