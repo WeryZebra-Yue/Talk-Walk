@@ -1,7 +1,7 @@
 import {useCollection} from "react-firebase-hooks/firestore"
 import { db } from "../firebasee";
 import Post from "./Post";
-import Link from 'next/link'
+
 
 function Posts({p}) {
      const [realtimePosts] = useCollection(db.collection('post').orderBy('timestap','desc'));
