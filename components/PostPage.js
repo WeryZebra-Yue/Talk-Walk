@@ -2,7 +2,7 @@ import Image from "next/image"
 import{
     ShareIcon
 } from "@heroicons/react/solid"
-import Link from "next/link"
+
 import { useRef, useState } from "react"
 import {db,rdb} from '../firebasee'
 import {useSession} from 'next-auth/client'
