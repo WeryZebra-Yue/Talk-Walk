@@ -1,43 +1,45 @@
 import StoryCard from "./StoryCard"
 import Image from "next/image"
+import AddStories from "./AddStories"
+import { useCollection } from "react-firebase-hooks/firestore";
+import { db } from "../firebasee";
 
-const stories3 = [
-    {
-        name :"Sonny Sangha",
-        src : "https://links.papareact.com/zof",
-        profile : "https://links.papareact.com/l4v"
-
-    },
-    {
-        name :"Elon Musk",
-        src : "https://links.papareact.com/4zn",
-        profile : "https://links.papareact.com/kxk"
-
-    }, {
-        name : "Jeff Bezoz",
-        src : "https://links.papareact.com/k2j",
-        profile : "https://links.papareact.com/f0p"
-
-    }, {
-        name : "Mark Zuckerberg",
-        src : "https://links.papareact.com/xql",
-        profile : "https://links.papareact.com/snf"
-
-    }, {
-        name : "Bill Gates",
-        src : "https://links.papareact.com/4u4",
-        profile : "https://links.papareact.com/zvy"
-
-    },
-]
 function Stories() {
+    const [realtimePosts] = useCollection(db.collection('stories').orderBy('timestap','desc'));
     return (
-        <div className="justify-center flex space-x-3 mx-auto z-0"> 
-
-  
-        {stories3.map((story,index)=>{
-         return <StoryCard key ={index}src = {story.src} name = {story.name} profile ={story.profile}/>
-     })}
+        <div className="  flex space-x-3 mx-auto z-0 overflow-x-scroll pt-4 pb-4 pr-2 pl-2 "> 
+        <AddStories/>
+        {/* return <StoryCard key ={index}src = {story.src} name = {story.name} profile ={story.profile}/> */}
+        {    
+                
+        
+                realtimePosts?.docs.map((post,index)=>{
+                   
+                   return <StoryCard
+                     key = {index}
+                     profile = {post.data().image}
+                     src = {post.data().postImage}
+                   
+                   
+                    />
+                 })
+             //    }):(
+             //     p.map((postt,index)=>{
+                   
+             //         return <Post
+             //           key = {index}
+             //           name = {postt.data().name}
+             //           message = {postt.data().message}
+             //           email = {postt.data().email}
+             //           timestamp = {postt.data().timestap}
+             //           image = {postt.data().image}
+             //           postImage = {postt.data().postImage}
+             //           id = {post.data().id}
+             //          />
+             //     }
+             //    ))
+                
+            }     
         </div>
     )
 }

@@ -8,7 +8,8 @@ module.exports = {
       "drive.google.com",
       "cdn.dribbble.com",
       "lh6.googleusercontent.com",
-      "lh4.googleusercontent.com"
+      "lh4.googleusercontent.com",
+      "img.icons8.com"
     ]
   }
 }

@@ -137,7 +137,7 @@ function Header() {
             <ViewGridIcon className="icon"/>
                 <ChatIcon className="icon"/>
                 <BellIcon className="icon"/>
-                <ChevronDownIcon className="icon"/>
+                <ChevronDownIcon className="icon" onClick={signOut}/>
                 </div>
         </div>
         <div className="flex flex-col  rounded-md bg-white shadow-md transition-shadow duration-75">

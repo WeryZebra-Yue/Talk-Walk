@@ -15,15 +15,16 @@ export default function Home({session}) {
   const [sessions] = useSession();
 
   if(!session) return (
-    <div className="grid place-items-center ">
+    <div className="flex flex-col justify-center min-h-screen bg-gray-200 items-center unselectable ">
             
     <Image
-    src = "https://links.papareact.com/t4i"
-    height = {400}
-    width = {400}
+    src = "https://firebasestorage.googleapis.com/v0/b/ssclone.appspot.com/o/Logo%2Flogo2png.png?alt=media&token=8c95298b-3add-48b3-a9a9-44fdaa2cc6b3"
+    height = {200}
+    width = {200}
+    draggable="false"
     objectFit = "contain"
     />
-    <h1 onClick={signin} className="p-5 cursor-pointer bg-blue-600 text-white rounded-full text-center font-semibold text-lg"> Log In with Google</h1>
+    <h1 onClick={signin} className="p-5 cursor-pointer m-7 bg-blue-800 text-white rounded-xl text-center font-semibold text-lg"> Log In with Google</h1>
 
 </div>
   );
@@ -40,7 +41,8 @@ export default function Home({session}) {
     <div  className="bg-gray-200 min-h-screen">
       
       <Head>
-        <title>FaceBook</title>
+        <title>Talk-Walk</title>
+      
         
       </Head>
       <Header/>

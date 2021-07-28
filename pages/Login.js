@@ -9,7 +9,7 @@ function Login() {
         <div className="grid place-items-center ">
             
             <Image
-            src = "https://links.papareact.com/t4i"
+            src = "https://firebasestorage.googleapis.com/v0/b/ssclone.appspot.com/o/Logo%2Flogo.png?alt=media&token=aba6b0a3-c347-4429-aa27-8c22bb9ed83c"
             height = {400}
             width = {400}
             objectFit = "contain"
