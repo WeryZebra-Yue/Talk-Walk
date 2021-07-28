@@ -19,6 +19,7 @@ function Stories() {
                      key = {index}
                      profile = {post.data().image}
                      src = {post.data().postImage}
+                     name = {post.data().name}
                    
                    
                     />

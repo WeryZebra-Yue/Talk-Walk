@@ -19,7 +19,7 @@ function StoryCard({name,profile,src}) {
          objectFit="cover"
          draggable="false"
          />
-            <p className="absolute bottom-0 opacity-0 group-hover:opacity-100 z-50 p-2 text-gray-800 font-bold text-[.70rem] lg:text-base ">Ayush Master</p>
+            <p className="absolute bottom-0 opacity-0 group-hover:opacity-100 z-50 p-2 text-gray-800 font-bold text-[.70rem] lg:text-base ">{name}</p>
  
          <Image
          className="object-cover filter rounded-3xl brightness-50 z-0 transition duration-100 group-hover:brightness-100"
