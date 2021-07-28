@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useRef, useState } from 'react';
 import { db, stoeage } from '../../firebasee';
 import firebase from 'firebase';
-import { Router, useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 
 import { useSession } from 'next-auth/client';
 function Adder() {
@@ -15,6 +15,7 @@ function Adder() {
     const [imagetopost,setImage] = useState("https://firebasestorage.googleapis.com/v0/b/ssclone.appspot.com/o/Logo%2Flogo.png?alt=media&token=aba6b0a3-c347-4429-aa27-8c22bb9ed83c");
     const [type,setType] = useState(null);
     const [texts,setTexts] = useState(null);
+    
     const sendPost = (e) =>{
         e.preventDefault();
         function makeid(length) {
@@ -22,17 +23,19 @@ function Adder() {
             var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             var charactersLength = characters.length;
             for ( var i = 0; i < length; i++ ) {
-              result += characters.charAt(Math.floor(Math.random() * 
-         charactersLength));
-           }
-           return result;
+                result += characters.charAt(Math.floor(Math.random() * 
+                charactersLength));
+            }
+            return result;
         }
+        
+
         // if(!imagetopost){
-        //      setImage()
-        // }
+            //      setImage()
+            // }
         // if(type=="video/mp4"){
-        //     if(document.getElementById("postimagereview")){
-        //         document.getElementById("postimagereview").src = "https://cdn.dribbble.com/users/45617/screenshots/5021228/frame_3_4x.png";
+            //     if(document.getElementById("postimagereview")){
+                //         document.getElementById("postimagereview").src = "https://cdn.dribbble.com/users/45617/screenshots/5021228/frame_3_4x.png";
         //     }
         // }
         // console.log(imagetopost)
@@ -105,6 +108,8 @@ const removeImage = () =>{
     document.getElementById('files').value = "";
     setImage("https://firebasestorage.googleapis.com/v0/b/ssclone.appspot.com/o/Logo%2Flogo.png?alt=media&token=aba6b0a3-c347-4429-aa27-8c22bb9ed83c");
 }
+
+
     return (
 
         <div className="bg-gray-200 min-h-screen  flex items-center justify-center">
