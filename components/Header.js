@@ -134,10 +134,10 @@ function Header() {
             </div>
             </a>
             <div className="flex items-center sm:space-x-2 justify-end">
-            <ViewGridIcon className="icon"/>
+            {/* <ViewGridIcon className="icon"/>
                 <ChatIcon className="icon"/>
                 <BellIcon className="icon"/>
-                <ChevronDownIcon className="icon" onClick={signOut}/>
+                <ChevronDownIcon className="icon" onClick={signOut}/> */}
                 </div>
         </div>
         <div className="flex flex-col  rounded-md bg-white shadow-md transition-shadow duration-75">

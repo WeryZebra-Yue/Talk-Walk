@@ -9,10 +9,12 @@ import Sidebar from '../components/Sidebar'
 import { db ,rdb } from '../firebasee'
 import Image from 'next/image'
 import {signin} from 'next-auth/client'
+import {useRouter} from 'next/router'
 
 export default function Home({session}) {
 
   const [sessions] = useSession();
+  const Router  = useRouter()
 
   if(!session) return (
     <div className="flex flex-col justify-center min-h-screen bg-gray-200 items-center unselectable ">

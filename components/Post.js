@@ -93,7 +93,7 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
                 <Like id={id} />
                {/* ,,,,,,,,,,,,,,,,,,,,,,,,,,,, */}
              
-                <a  className="inputIcon rounded-none unselectable rounded-br-2xl" href={`whatsapp://send?text=localhost:3000/post/${id}`} data-action="share/whatsapp/share" >
+                <a  className="inputIcon rounded-none unselectable rounded-br-2xl" href={`whatsapp://send?text=https://is-clone3.vercel.app/post/${id}`} data-action="share/whatsapp/share" >
                   
                 <ShareIcon className="h-4"/>
                 <p className="text-xs sm:text-base"  id={`share${id}`}>Share</p>

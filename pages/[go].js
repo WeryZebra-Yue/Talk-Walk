@@ -4,7 +4,7 @@ import {useRouter} from "next/router"
 import { useEffect, useState } from "react";
 import { db  , rdb} from "../firebasee";
 import Image from "next/image"
-import {getSession,useSession} from "next-auth/client"
+import {getSession,signIn,useSession} from "next-auth/client"
 import Login from "./Login"
 import Prpost from "../components/Prpost"
 import HeaderProfile from "../components/HeaderProfile";
@@ -34,7 +34,20 @@ function Go({sessions}) {
       }
     }, [router])
      
-      if(!sessions) return <Login/>
+      if(!sessions) return (
+      
+        <div className="flex flex-col justify-center min-h-screen bg-gray-200 items-center unselectable ">
+            
+        <Image
+        src = "https://firebasestorage.googleapis.com/v0/b/ssclone.appspot.com/o/Logo%2Flogo2png.png?alt=media&token=8c95298b-3add-48b3-a9a9-44fdaa2cc6b3"
+        height = {200}
+        width = {200}
+        draggable="false"
+        objectFit = "contain"
+        />
+        <h1 onClick={signIn} className="p-5 cursor-pointer m-7 bg-blue-800 text-white rounded-xl text-center font-semibold text-lg"> Log In with Google</h1>
+    
+    </div>  );
          
 
           
@@ -42,7 +55,7 @@ function Go({sessions}) {
      return (
        
       <div className="h-full min-h-screen w-full bg-gray-200">
-        <HeaderProfile userName = {username} userImage = {userimage} />
+        <HeaderProfile userName = {username} userImage = {userimage} email = {route} sessionemail = {sessions.user.email.split('@')[0]} />
       <div className="mx-auto  max-w-md md:max-w-lg lg:max-w-2xl">
              {/* <Profile/> */}
              {/* <Header/> */}

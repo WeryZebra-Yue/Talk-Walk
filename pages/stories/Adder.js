@@ -43,6 +43,9 @@ function Adder() {
         // console.log(!imagetopost , imagetopost!="https://firebasestorage.googleapis.com/v0/b/ssclone.appspot.com/o/Logo%2Flogo.png?alt=media&token=aba6b0a3-c347-4429-aa27-8c22bb9ed83c")
         if(imagetopost && imagetopost!="https://firebasestorage.googleapis.com/v0/b/ssclone.appspot.com/o/Logo%2Flogo.png?alt=media&token=aba6b0a3-c347-4429-aa27-8c22bb9ed83c"){
             Router.push('/')
+         
+            // console.log()
+            
      db.collection('stories').add({
         // message : inputref.current.value,
         name : session.user.name,
@@ -50,6 +53,7 @@ function Adder() {
         id : makeid(10),
         image : session.user.image,
         timestap : firebase.firestore.FieldValue.serverTimestamp()
+        
 
     }).then(doc=>{
       

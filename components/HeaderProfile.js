@@ -1,12 +1,13 @@
-import { useSession } from "next-auth/client"
+import { signOut, useSession } from "next-auth/client"
 import Image from "next/image";
 
-function HeaderProfile({userName,userImage}) {
-    // const [session] = useSession();
+function HeaderProfile({userName,userImage,email,sessionemail}) {
+     const [session] = useSession();
     
     return (
         <div className="bg-white flex shadow-md">
-            <div className="flex items-center h-12  m-2  md:h-18 md:m-5">
+            <div className="flex items-center h-12  m-2  md:h-18 md:m-5 w-full justify-between">
+                <div className="flex items-center">
                { userImage && 
                
                <Image
@@ -19,7 +20,12 @@ function HeaderProfile({userName,userImage}) {
                
                }
                 <p className=" ml-5 text-lg  md:text-xl">{userName}</p>
+                </div>
+               {email==sessionemail?(
+                   <div className="p-2 bg-blue-700 text-white rounded-md cursor-pointer text-sm" onClick={signOut}>Log Out</div>
+               ):null}
             </div>
+
         </div>
     )
 }
