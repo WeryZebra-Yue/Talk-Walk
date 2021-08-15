@@ -70,7 +70,7 @@ function Header() {
             <div className="sticky  top-0 z-50">
         <div className="flex items-center sticky top-0 bg-white p-2 lg:-px-5 shadow-md z-50">
            {/*Left part*/}
-           <Link replace href="/">
+           <div onClick={location.replace('/')}>
            <svg className="h-12 md:h-16 mt-1" preserveAspectRatio="xMidYMid meet" viewBox="695 273 158 159"><g data-item-type="text" data-item="Business" id="logo__item--business" >
     <g  transform="translate(698.515625 429.67821982214735) scale(1 1) rotate(0 0 0)">
     </g>
@@ -89,8 +89,8 @@ function Header() {
 </g>
 
 </g>
-</g></svg>
-</Link>
+</g></svg></div>
+
         
             <div className="relative flex-col">
             <div className="flex ml-2 flex-grow items-center rounded-full  bg-gray-100 p-2 ">
