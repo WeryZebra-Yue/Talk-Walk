@@ -8,7 +8,7 @@ import {
     UserGroupIcon,
     ViewGridIcon,
 } from '@heroicons/react/solid'
-function HeaderProfile({userName,userImage,email,sessionemail}) {
+function LogoHeader({userName,userImage,email,sessionemail}) {
      const [session] = useSession();
 
     
@@ -37,27 +37,12 @@ function HeaderProfile({userName,userImage,email,sessionemail}) {
 </g>
 </g></svg>
             </div>
-        <div className="flex  justify-center items-center self-center justify-self-center">
-               { userImage && 
-               <div className="relative h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 ">
-               <Image
-                src={userImage}
-                objectFit="fill"
-                className=" rounded-full  border-2 border-blue-500 md:flex"
-                layout="fill"
-            
-                 />
-               </div>
-               }
-                <p className=" ml-3 md:ml-5 text-sm md:text-xl">{userName}</p>
-                </div>
-               {((email && session)&&(email===sessionemail))?(
-                   <div className="p-2 bg-blue-700 text-white rounded-md cursor-pointer text-xs md:p-2 md:tex" onClick={signOut}>Log Out</div>
-               ): null}
+      
+          
             </div>
 
         </div>
     )
 }
 
-export default HeaderProfile
+export default LogoHeader

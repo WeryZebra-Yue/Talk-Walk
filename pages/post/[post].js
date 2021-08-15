@@ -4,6 +4,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import PostPage from "../../components/PostPage";
 import { db } from "../../firebasee";
 import Head from 'next/head'
+import LogoHeader from "../../components/LogoHeader";
 
 function Post() {
     const router = useRouter();
@@ -20,8 +21,8 @@ function Post() {
     {  
         
         return (
-            <div className=" w-full justify-center m-0 p-0 bg-gray-200 min-h-screen">
-               
+            <div className=" w-full justify-center m-0 p-0 bg-gray-200 min-h-screen flex flex-col">
+               <LogoHeader/>
               <div className="mx-auto  max-w-md md:max-w-lg lg:max-w-2xl ">
                           
                 <div className="flex min-h-screen">

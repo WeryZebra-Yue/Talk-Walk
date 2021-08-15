@@ -68,7 +68,7 @@ function Header() {
     // console.log(session.user.email.split('@')[0])
         return (
             <div className="sticky  top-0 z-50">
-        <div className="flex items-center sticky top-0 bg-white p-2 lg:-px-5 shadow-md z-50">
+        <div className="flex items-center sticky cursor-pointer top-0 bg-white p-2 lg:-px-5 shadow-md z-50">
            {/*Left part*/}
            <div onClick={()=>location.replace('/')}>
            <svg className="h-12 md:h-16 mt-1" preserveAspectRatio="xMidYMid meet" viewBox="695 273 158 159"><g data-item-type="text" data-item="Business" id="logo__item--business" >

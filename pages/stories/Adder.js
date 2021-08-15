@@ -7,6 +7,7 @@ import firebase from 'firebase';
 import { useRouter } from 'next/router';
 
 import { useSession } from 'next-auth/client';
+import LogoHeader from '../../components/LogoHeader';
 function Adder() {
     const [session] = useSession();
     // const inputref = useRef(null);
@@ -116,12 +117,12 @@ const removeImage = () =>{
 
     return (
 
-        <div className="bg-gray-200 min-h-screen  flex items-center justify-center">
+        <div className="bg-gray-200 min-h-screen w-full  flex   flex-col" >
         <Head>
         <title>Add Story</title>    
         </Head>   
-       
-        <div className="bg-white p-2 rounded-2xl shadow-md 
+       <LogoHeader/>
+        <div className="bg-white p-2 rounded-2xl shadow-md justify-self-center  self-center
         text-gray-600 font-medium mt-6 m-3 w-full  md:w-6/12 pt-8 pr-4 pl-4 ">
             {/* tophalf */}
             {imagetopost&&
