@@ -17,7 +17,7 @@ function HeaderProfile({userName,userImage,email,sessionemail}) {
             <div className="flex items-center h-12  m-2  md:h-18 md:m-5 w-full justify-between">
                 <div className="flex items-center" onClick={()=>location.replace('/')}>
                 
-                <svg className="h-12 md:h-16 mt-1 cursor-pointer" preserveAspectRatio="xMidYMid meet" viewBox="695 273 158 159"><g data-item-type="text" data-item="Business" id="logo__item--business" >
+                <svg className="h-12 md:h-16 mt-1" preserveAspectRatio="xMidYMid meet" viewBox="695 273 158 159"><g data-item-type="text" data-item="Business" id="logo__item--business" >
     <g  transform="translate(698.515625 429.67821982214735) scale(1 1) rotate(0 0 0)">
     </g>
 </g><g data-item-type="text" id="logo__item--tagline_1" data-item="Tagline" >

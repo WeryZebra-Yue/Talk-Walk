@@ -21,11 +21,11 @@ function Post() {
     {  
         
         return (
-            <div className=" w-full justify-center m-0 p-0 bg-gray-200 min-h-screen flex flex-col">
+            <div className=" w-full justify-center m-0 p-0 bg-gray-200 min-h-screen ">
                <LogoHeader/>
-              <div className="mx-auto  max-w-md md:max-w-lg lg:max-w-2xl ">
+              <div className="mx-auto  max-w-md md:max-w-lg lg:max-w-2xl  ">
                           
-                <div className="flex min-h-screen">
+                <div className="flex max-h-screen">
                     <div className="flex flex-col w-full self-center justify-self-center items-center justify-center  p-3 mb-3  ">
                 {
              realtimePosts?.docs.map((post,index)=>{
