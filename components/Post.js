@@ -64,7 +64,7 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
                <img
                  src={postImage}
                  className="object-contain max-h-96 w-full"
-
+                 loading="lazy" 
                  
                  />
            </div>
