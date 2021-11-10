@@ -60,16 +60,12 @@ function Post({id,name,message,email,postImage,image,timestamp,Type}) {
           {postImage&&
           
           !Type && 
-               <div className="relative  bg-white justify-center h-96">
-               <Image
+               <div className="relative  bg-white justify-center max-h-96">
+               <img
                  src={postImage}
-                 className="object-contain "
-                
-                 placeholder="blurURLData"
-                 //  height = {596}
-                  objectfit = "contain"
-                 //  width = {596}
-                 layout ="fill"
+                 className="object-contain max-h-96 w-full"
+
+                 
                  />
            </div>
        }

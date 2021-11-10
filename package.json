@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export":"next export"
+    "export": "next export"
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
@@ -29,5 +29,18 @@
     "eslint-config-next": "11.0.1",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "firebasee.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeryZebra-Yue/FaceClone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WeryZebra-Yue/FaceClone/issues"
+  },
+  "homepage": "https://github.com/WeryZebra-Yue/FaceClone#readme"
 }
