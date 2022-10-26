@@ -43,7 +43,6 @@ export default function Home({ session }) {
       </Head>
       <Header />
       <main className="flex flex-row">
-        {/* <Sidebar/> */}
         <Feed />
       </main>
     </div>
