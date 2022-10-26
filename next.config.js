@@ -1,6 +1,6 @@
 module.exports = {
-  images :{
-    domains : [
+  images: {
+    domains: [
       "links.papareact.com",
       "platform-lookaside.fbsbx.com",
       "firebasestorage.googleapis.com",
@@ -9,7 +9,7 @@ module.exports = {
       "cdn.dribbble.com",
       "lh6.googleusercontent.com",
       "lh4.googleusercontent.com",
-      "img.icons8.com"
-    ]
-  }
-}
+      "img.icons8.com",
+    ],
+  },
+};
