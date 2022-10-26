@@ -9,9 +9,9 @@ import Link from "next/link";
 function InputBox() {
   const [session] = useSession();
 
-  const inputref = useRef(null);
-  const filepicker = useRef(null);
-  const [imagetopost, setImage] = useState(null);
+  const inputRef = useRef(null);
+  const filePicker = useRef(null);
+  const [imageToPost, setImageToPost] = useState(null);
   const [type, setType] = useState(null);
   const sendPost = (e) => {
     e.preventDefault();
@@ -33,11 +33,11 @@ function InputBox() {
           "https://cdn.dribbble.com/users/45617/screenshots/5021228/frame_3_4x.png";
       }
     }
-    if (!inputref.current.value) return;
+    if (!inputRef.current.value) return;
 
     db.collection("post")
       .add({
-        message: inputref.current.value,
+        message: inputRef.current.value,
         name: session.user.name,
         email: session.user.email.split("@")[0],
         id: makeid(10),
@@ -45,12 +45,11 @@ function InputBox() {
         timestap: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then((doc) => {
-        if (imagetopost) {
+        if (imageToPost) {
           const uploadTask = stoeage
             .ref(`post/${doc.id}`)
-            .putString(imagetopost, "data_url");
+            .putString(imageToPost, "data_url");
           removeImage();
-          // if()
           uploadTask.on(
             "state_change",
             null,
@@ -61,7 +60,6 @@ function InputBox() {
                 .child(doc.id)
                 .getDownloadURL()
                 .then((url) => {
-                  //  console.log(url)
                   db.collection("post")
                     .doc(doc.id)
                     .set(
@@ -78,7 +76,7 @@ function InputBox() {
           setType(null);
         }
       });
-    inputref.current.value = "";
+    inputRef.current.value = "";
   };
   const addImageToPost = (e) => {
     let types;
@@ -92,18 +90,17 @@ function InputBox() {
 
     reader.onload = (readerEvent) => {
       if (types == "video/mp4") {
-        setImage(readerEvent.target.result);
+        setImageToPost(readerEvent.target.result);
       } else {
-        setImage(readerEvent.target.result);
+        setImageToPost(readerEvent.target.result);
       }
       console.log(types);
     };
-    // e.target.files[0].remove()
     document.getElementById("files").value = "";
   };
   const removeImage = () => {
     document.getElementById("files").value = "";
-    setImage(null);
+    setImageToPost(null);
   };
 
   return (
@@ -111,7 +108,7 @@ function InputBox() {
       className="bg-white p-2 rounded-2xl shadow-md 
         text-gray-600 font-medium mt-6 m-3"
     >
-      {/* tophalf */}
+      {/* Top Half */}
       <div className="flex space-x-4 p-4 items-center">
         <Image
           src={session.user.image}
@@ -126,20 +123,20 @@ function InputBox() {
             className="rounded-full h-10  bg-gray-200 flex-grow px-3 focus:outline-none text-xs sm:text-base"
             type="text"
             placeholder={` What's on your mind ${session.user.name} ?`}
-            ref={inputref}
+            ref={inputRef}
           />
           <button hidden type="submit" onClick={sendPost}>
             Submit
           </button>
         </form>
-        {imagetopost && (
+        {imageToPost && (
           <div className="flex flex-col hover:brightness-110 transition duration-150 hover:scale-105 cursor-pointer min-h-20 min-w-20">
             <Image
               className="object-contain rounded-lg h-16"
               id="postimagereview"
               height={45}
               width={90}
-              src={imagetopost}
+              src={imageToPost}
               alt=""
             />
             <p
@@ -150,18 +147,9 @@ function InputBox() {
             </p>
           </div>
         )}
-        {/* <Link href="/234">
-                   <a>heloo</a>
-               </Link> */}
-        {/* bottomhalf */}
       </div>
       <div className="flex justify-evenly p-3 border-1 ">
-        {/* <div className="inputIcon">
-             <VideoCameraIcon 
-             className="h-7 text-red-500 "/>
-             <p className="text-xs sm:text-sm xl:text-base">Live Video</p>            
-            </div> */}
-        <div onClick={() => filepicker.current.click()} className="inputIcon">
+        <div onClick={() => filePicker.current.click()} className="inputIcon">
           <CameraIcon className="h-7 text-green-500 " />
           <p className="text-xs sm:text-sm xl:text-base">Photo/Video/GIF</p>
           <input
@@ -170,14 +158,9 @@ function InputBox() {
             type="file"
             accept=".jpeg , .jpg, .png ,.mp4 ,.gif"
             hidden
-            ref={filepicker}
+            ref={filePicker}
           />
         </div>
-        {/* <div className="inputIcon">
-             <EmojiHappyIcon 
-             className="h-7 text-yellow-500 "/>
-             <p className="text-xs sm:text-sm xl:text-base">Feeling Activity</p>      
-             </div> */}
       </div>
     </div>
   );
