@@ -5,6 +5,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
+    theme: {
+      fontFamily: {
+        display: ["Inter"],
+        body: ["Inter"],
+      },
+    },
   },
   variants: {
     extend: {},
