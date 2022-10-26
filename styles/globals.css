@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-  .icon{
+@layer components {
+  .icon {
     @apply hidden xl:inline-flex p-2 h-9 w-9 bg-gray-200 rounded-full text-gray-600 cursor-pointer bg-gray-300;
   }
-  .inputIcon{
-    @apply flex items-center space-x-1 hover:bg-gray-200 flex-grow justify-center p-2 rounded-xl cursor-pointer ;
+  .inputIcon {
+    @apply flex items-center space-x-1 hover:bg-gray-200 flex-grow justify-center p-2 rounded-xl cursor-pointer;
   }
-  .likecss{
+  .likecss {
     @apply text-blue-500;
   }
-  .likees{
+  .likees {
     @apply text-blue-500;
   }
 }
