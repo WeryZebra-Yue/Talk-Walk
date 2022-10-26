@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { signin } from "next-auth/client";
+import { useState } from "react";
+import { Loader } from "react-loader-spinner";
 
 function Login() {
+  const [Load, setLoader] = useState(true);
   return (
     <div className="grid place-items-center ">
       <Image
@@ -9,10 +12,21 @@ function Login() {
         height={400}
         width={400}
         objectFit="contain"
+        onLoad={() => {
+          setLoader(false);
+        }}
       />
+      <Loader
+        type="Puff"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        visible={Load}
+      />
+
       <h1
         onClick={signin}
-        className="p-5 cursor-pointer bg-blue-600 text-white rounded-full text-center font-semibold text-lg"
+        className="p-5 cursor-pointer bg-blue-600 text-white rounded-full text-center "
       >
         {" "}
         Log In with Google
