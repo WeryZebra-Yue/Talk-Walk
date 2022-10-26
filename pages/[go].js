@@ -1,4 +1,5 @@
-
+// import { QrcodeIcon } from "@heroicons/react/solid";
+// import { route } from "next/dist/next-server/server/router";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { db, rdb } from "../firebasee";
@@ -61,7 +62,9 @@ function Go({ sessions }) {
           sessionemail={sessions.user.email.split("@")[0]}
         />
         <div className="mx-auto  max-w-md md:max-w-lg lg:max-w-2xl">
-        
+          {/* <Profile/> */}
+          {/* <Header/> */}
+          {/* <HeaderProfile/> */}
           <div className="flex flex-grow">
             {route && <Prpost user={route} flag={false} />}
           </div>
@@ -73,7 +76,9 @@ function Go({ sessions }) {
       <div className="h-full min-h-screen w-full bg-gray-200">
         <HeaderProfile userName={username} userImage={userimage} />
         <div className="mx-auto  max-w-md md:max-w-lg lg:max-w-2xl">
-         
+          {/* <Profile/> */}
+          {/* <Header/> */}
+          {/* <HeaderProfile/> */}
           <div className="flex flex-grow">
             {route && <Prpost user={route} flag={true} />}
           </div>
