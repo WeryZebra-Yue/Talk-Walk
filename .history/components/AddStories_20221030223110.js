@@ -3,12 +3,7 @@ import Link from "next/link";
 import Adder from "../pages/stories/Adder";
 
 function AddStories() {
-  function clicked() {
-    useEffect(() => {
-      const adder = document.querySelector(".adder");
-      adder.classList.add("active");
-    }, []);
-  }
+  function clicked() {}
   return (
     <div className="flex items-center  hover:scale-105 transition duration-100  rounded-3xl justify-center border-2 border-blue-500 h-32 w-20 lg:h-56 lg:w-32 cursor-pointer overflow-x ">
       <Link href="./stories/Adder">
